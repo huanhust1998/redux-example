@@ -5,7 +5,7 @@ import {
     increment,
     incrementByAmount,
     incrementAsync,
-    selectCount,
+    selectCount, mulByAmount,
 } from './counterSlice';
 import styles from './Counter.module.css';
 
@@ -14,6 +14,8 @@ export function Counter() {
     const dispatch = useDispatch();
     const [incrementAmount, setIncrementAmount] = useState('2');
 
+    //sau khi click vào button, ta có hàm dispatch(), hàm này sẽ chuyển action tới store
+    //mà trong store, các action đã được định nghĩ trước
     return (
         <div>
             <div className={styles.row}>
@@ -25,12 +27,20 @@ export function Counter() {
                     +
                 </button>
                 <span className={styles.value}>{count}</span>
+                <span className={styles.value}>{incrementAmount}</span>
                 <button
                     className={styles.button}
                     aria-label="Decrement value"
                     onClick={() => dispatch(decrement())}
                 >
                     -
+                </button>
+                <button
+                    className={styles.button}
+                    aria-label="Decrement value"
+                    onClick={() => dispatch(mulByAmount(Number(incrementAmount)||0))}
+                >
+                    X
                 </button>
             </div>
             <div className={styles.row}>
