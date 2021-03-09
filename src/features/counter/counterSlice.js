@@ -5,7 +5,14 @@ import {createSlice} from '@reduxjs/toolkit';
 // tất cả những gì bạn làm là xác định tên cho slice, viết một đối tượng có một số reducer function trong đó, và nó sẽ tự động tạo action tương ứng
 // ngoài trường name, createSlice cần chúng ta chuyền vào initial state cho reducers
 
-//2. createSlice tự động tạo actions với tên giống với reducer functions chúng ta viết
+//2. createSlice quan tâm đến việc tạp action type strings, action creator functions, và action object.
+//   tất cả những gì bạn làm là xác định một cái tên cho the slice, viết một object có một số reducer function trong nó, và nó tự động tạo action code tương ứng
+//   "name" được sử dụng làm phần đầu của mỗi action type và key name của mỗi reducer function được sử dụng là phần thứ 2: (counter/increment)
+
+//3. ngoài trường name, createSlice cần chúng ta chuyền vào initial state cho reducers, để có một state trong lần đầu tiên nó được gọi
+
+// ở đây có 3 reducer functions và tương ứng với 3 loại action khác nhau đã được thực hiện bằng cách nhập vào button khác nhau
+// creatSlice tự động tạo các action creators với tên cùng tên với reducer function đã viết,
 export const slice = createSlice({
     name: 'counter',
     initialState: {

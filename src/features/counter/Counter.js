@@ -11,6 +11,7 @@ import {luythua} from "./counterSlice1";
 import styles from './Counter.module.css';
 import {selectCount_LuyThua} from "./counterSlice1";
 
+// sử dụng useSelector vaf useDispatch hook để giao tiếp với Redux store
 export function Counter() {
     const count = useSelector(selectCount);
     const luythua1 = useSelector(selectCount_LuyThua)
