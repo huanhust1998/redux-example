@@ -7,10 +7,13 @@ import {
     incrementAsync,
     selectCount, mulByAmount,
 } from './counterSlice';
+import {luythua} from "./counterSlice1";
 import styles from './Counter.module.css';
+import {selectCount_LuyThua} from "./counterSlice1";
 
 export function Counter() {
     const count = useSelector(selectCount);
+    const luythua1 = useSelector(selectCount_LuyThua)
     const dispatch = useDispatch();
     const [incrementAmount, setIncrementAmount] = useState('2');
 
@@ -28,6 +31,7 @@ export function Counter() {
                 </button>
                 <span className={styles.value}>{count}</span>
                 <span className={styles.value}>{incrementAmount}</span>
+                <span className={styles.value}>{luythua1}</span>
                 <button
                     className={styles.button}
                     aria-label="Decrement value"
@@ -38,9 +42,9 @@ export function Counter() {
                 <button
                     className={styles.button}
                     aria-label="Decrement value"
-                    onClick={() => dispatch(mulByAmount(Number(incrementAmount)||0))}
+                    onClick={() => dispatch(luythua())}
                 >
-                    X
+                    +h
                 </button>
             </div>
             <div className={styles.row}>

@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import luythua from '../features/counter/counterSlice1'
 
 //Redux store được tạo bằng cách sử dụng configureStore function của Redux ToolKit
 // Một redux store cần có duy nhất một "root reducer" function truyền vào khi nó được tạo ra
@@ -7,6 +8,7 @@ import counterReducer from '../features/counter/counterSlice';
 export default configureStore({
     reducer: {
         counter: counterReducer,
+        luythua: luythua
     },
 });
 
